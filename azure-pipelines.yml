@@ -20,6 +20,6 @@ steps:
     location: 'Japan East'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/VirexLai/DevOpsLabs/main/ARM_create_webapp/azuredeploy.json'
-    overrideParameters: '-projectName DevOpsARM'
+    overrideParameters: '-projectName devopsarm'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
