@@ -51,7 +51,7 @@
         },
         "publicIpAddressName": {
             "type": "string",
-            "defaultValue": "[]"
+            "defaultValue": null
         },
         "publicIpAddressType": {
             "type": "string",
