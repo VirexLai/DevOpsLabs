@@ -55,7 +55,7 @@
         },
         "publicIpAddressType": {
             "type": "string",
-            "defaultValue": "static"
+            "defaultValue": "[]"
         },
         "publicIpAddressSku": {
             "type": "string",
