@@ -59,7 +59,7 @@
         },
         "publicIpAddressSku": {
             "type": "string",
-            "value": "Standard"
+            "defaultValue": "[]"
         },
         "pipDeleteOption": {
             "type": "string",
