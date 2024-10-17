@@ -43,9 +43,7 @@
         },
         "addressPrefixes": {
             "type": "array",
-            "value": [
-                "10.2.0.0/16"
-            ]
+            "defaultValue": "[]"
         },
         "subnets": {
             "type": "array",
