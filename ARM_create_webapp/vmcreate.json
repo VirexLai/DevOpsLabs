@@ -39,7 +39,7 @@
         },
         "virtualNetworkName": {
             "type": "string",
-            "value": "vm-vnet"
+            "defaultvalue": "[]"
         },
         "addressPrefixes": {
             "type": "array",
