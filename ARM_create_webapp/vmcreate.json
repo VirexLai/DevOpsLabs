@@ -7,7 +7,7 @@
             "minLength": 3,
             "maxLength": 11,
             "metadata": {
-            "description": "Specify a project name that is used to generate resource names."
+                "description": "Specify a project name that is used to generate resource names."
             }
         },
         "location": {
