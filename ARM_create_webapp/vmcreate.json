@@ -31,7 +31,7 @@
         },
         "networkSecurityGroupRules": {
             "type": "array",
-            "value": null
+            "value": [""]
         },
         "subnetName": {
             "type": "string",
