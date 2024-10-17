@@ -43,7 +43,7 @@
         },
         "addressPrefixes": {
             "type": "array",
-            "defaultValue": "[]"
+            "defaultValue": null
         },
         "subnets": {
             "type": "array",
