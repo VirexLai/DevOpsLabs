@@ -39,7 +39,7 @@
         },
         "virtualNetworkName": {
             "type": "string",
-            "defaultvalue": "[]"
+            "defaultvalue": "[concat(parameters('projectName'), 'vnet')]"
         },
         "addressPrefixes": {
             "type": "array",
