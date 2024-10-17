@@ -19,84 +19,134 @@
         },
         "networkInterfaceName": {
             "type": "string"
+            "value": "vm317"
         },
         "enableAcceleratedNetworking": {
             "type": "bool"
+            "value": true
         },
         "networkSecurityGroupName": {
             "type": "string"
+            "value": "vm-nsg"
         },
         "networkSecurityGroupRules": {
             "type": "array"
+            "value": [
+                {
+                    "name": "RDP",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "3389"
+                    }
+                }             
+            ]
         },
         "subnetName": {
             "type": "string"
+            "value": "default"
         },
         "virtualNetworkName": {
             "type": "string"
+            "value": "vm-vnet"
         },
         "addressPrefixes": {
             "type": "array"
+            "value": [
+                "10.2.0.0/16"
+            ]
         },
         "subnets": {
             "type": "array"
+            "value": [
+                {
+                    "name": "default",
+                    "properties": {
+                        "addressPrefix": "10.2.0.0/24"
+                    }
+                }
+            ] 
         },
         "publicIpAddressName": {
             "type": "string"
+            "value": "vm-ip"
         },
         "publicIpAddressType": {
             "type": "string"
+            "value": "Static"
         },
         "publicIpAddressSku": {
             "type": "string"
+            "value": "Standard"
         },
         "pipDeleteOption": {
             "type": "string"
+            "value": "Detach"
         },
         "virtualMachineName": {
             "type": "string"
+            "value": "vm"
         },
         "virtualMachineComputerName": {
             "type": "string"
+            "value": "vm"
         },
         "virtualMachineRG": {
             "type": "string"
+            "value": "DevOpsTest_NewRG"
         },
         "osDiskType": {
             "type": "string"
+            "value": "Premium_LRS"
         },
         "osDiskDeleteOption": {
             "type": "string"
+            "value": "Delete"
         },
         "virtualMachineSize": {
             "type": "string"
+            "value": "Standard_D2s_v3"
         },
         "nicDeleteOption": {
             "type": "string"
+            "value": "Detach"
         },
         "hibernationEnabled": {
             "type": "bool"
+            "value": false
         },
         "adminUsername": {
             "type": "string"
+            "value": "virex"
         },
         "adminPassword": {
             "type": "secureString"
+            "value": "Syscom539401"
         },
         "patchMode": {
             "type": "string"
+            "value": "AutomaticByOS"
         },
         "enableHotpatching": {
             "type": "bool"
+            "value": false
         },
         "securityType": {
             "type": "string"
+            "value": "TrustedLaunch"
         },
         "secureBoot": {
             "type": "bool"
+            "value": true
         },
         "vTPM": {
             "type": "bool"
+            "value": true
         }
     },
     "variables": {
