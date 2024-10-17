@@ -31,15 +31,15 @@
         },
         "networkSecurityGroupRules": {
             "type": "array",
-            "defaultvalue": "[]"
+            "defaultValue": "[]"
         },
         "subnetName": {
             "type": "string",
-            "defaultvalue": "[]"
+            "defaultValue": "[]"
         },
         "virtualNetworkName": {
             "type": "string",
-            "defaultvalue": "[concat(parameters('projectName'), 'vnet')]"
+            "defaultValue": "[concat(parameters('projectName'), 'vnet')]"
         },
         "addressPrefixes": {
             "type": "array",
