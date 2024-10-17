@@ -19,7 +19,7 @@
         },
         "networkInterfaceName": {
             "type": "string",
-            "value": null
+            "defaultValue": "[concat(parameters('projectName'), 'nif')]"
         },
         "enableAcceleratedNetworking": {
             "type": "bool",
@@ -27,7 +27,7 @@
         },
         "networkSecurityGroupName": {
             "type": "string",
-            "value": null
+            "defaultValue": "[concat(parameters('projectName'), 'nsg')]"
         },
         "networkSecurityGroupRules": {
             "type": "array",
