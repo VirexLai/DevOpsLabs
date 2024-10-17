@@ -6,6 +6,7 @@
             "type": "string",
             "metadata": {
             "description": "Specify a location for the resources."
+            }
         },
         "networkInterfaceName": {
             "value": "vmni"
