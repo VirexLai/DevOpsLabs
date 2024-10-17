@@ -44,7 +44,7 @@
                         "destinationAddressPrefix": "*",
                         "destinationPortRange": "3389"
                     }
-                }             
+                }
             ]
         },
         "subnetName": {
@@ -70,7 +70,7 @@
                         "addressPrefix": "10.2.0.0/24"
                     }
                 }
-            ] 
+            ]
         },
         "publicIpAddressName": {
             "type": "string",
