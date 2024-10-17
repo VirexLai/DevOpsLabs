@@ -23,7 +23,7 @@
         },
         "enableAcceleratedNetworking": {
             "type": "bool",
-            "value": null
+            "defaultvalue": null
         },
         "networkSecurityGroupName": {
             "type": "string",
@@ -31,7 +31,7 @@
         },
         "networkSecurityGroupRules": {
             "type": "array",
-            "value": "[]"
+            "defaultvalue": "[]"
         },
         "subnetName": {
             "type": "string",
