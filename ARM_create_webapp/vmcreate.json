@@ -51,7 +51,7 @@
         },
         "publicIpAddressName": {
             "type": "string",
-            "defaultValue": "[concat(parameters('projectName'), 'pubip')]"
+            "defaultValue": "[]"
         },
         "publicIpAddressType": {
             "type": "string",
