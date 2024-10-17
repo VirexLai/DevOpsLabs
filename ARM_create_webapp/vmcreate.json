@@ -51,7 +51,7 @@
         },
         "publicIpAddressName": {
             "type": "string",
-            "value": "vm-ip"
+            "defaultValue": "[concat(parameters('projectName'), 'pubip')]"
         },
         "publicIpAddressType": {
             "type": "string",
