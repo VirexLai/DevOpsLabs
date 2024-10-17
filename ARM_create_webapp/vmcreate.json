@@ -19,7 +19,7 @@
         },
         "networkInterfaceName": {
             "type": "string",
-            "value": "vm317"
+            "value": null
         },
         "enableAcceleratedNetworking": {
             "type": "bool",
@@ -27,7 +27,7 @@
         },
         "networkSecurityGroupName": {
             "type": "string",
-            "value": "vm-nsg"
+            "value": null
         },
         "networkSecurityGroupRules": {
             "type": "array",
