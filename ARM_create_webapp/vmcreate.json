@@ -35,7 +35,7 @@
         },
         "subnetName": {
             "type": "string",
-            "value": "default"
+            "defaultvalue": "[concat(parameters('projectName'), 'subnet')]"
         },
         "virtualNetworkName": {
             "type": "string",
