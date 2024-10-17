@@ -30,8 +30,7 @@
             "defaultValue": "[concat(parameters('projectName'), 'nsg')]"
         },
         "networkSecurityGroupRules": {
-            "type": "array",
-            "value": [""]
+            "type": "array"
         },
         "subnetName": {
             "type": "string",
