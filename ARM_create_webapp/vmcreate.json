@@ -63,7 +63,7 @@
         },
         "pipDeleteOption": {
             "type": "string",
-            "value": "Detach"
+            "defaultValue": "[]"
         },
         "virtualMachineName": {
             "type": "string",
