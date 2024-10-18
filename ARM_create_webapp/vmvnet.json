@@ -31,7 +31,7 @@
         },
         "virtualNetworkName": {
             "type": "string",
-            "defaultValue": "VMVNET",
+            "defaultValue": "[concat(parameters('projectName'), 'VMVNET')]",
             "metadata": {
                 "description": "Name of the virtual network resource."
             }
