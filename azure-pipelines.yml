@@ -19,7 +19,7 @@ steps:
     resourceGroupName: 'DevOpsTest_NewRG'
     location: 'Japan East'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/VirexLai/DevOpsLabs/refs/heads/main/ARM_create_webapp/vmcreate.json'
+    csmFileLink: 'https://raw.githubusercontent.com/VirexLai/DevOpsLabs/refs/heads/main/ARM_create_webapp/vmvnet.json'
     overrideParameters: '-projectName devopsarm'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
