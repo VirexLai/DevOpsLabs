@@ -19,15 +19,13 @@
             "defaultValue": "[resourceGroup().location]"
         },
         "subnetId": {
-            "type": "string"
+            "type": "string",
+            "defaultVaule": "/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/DevOpsTest_NewRG/providers/Microsoft.Network/virtualNetworks/devopsarmVMVNET/subnets/default"
         },
         "privateIPAllocationMethod": {
             "type": "string",
             "vaule": "Dynamic"
         }
-    },
-    "variables": {
-        "subnetId": "/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/DevOpsTest_NewRG/providers/Microsoft.Network/virtualNetworks/devopsarmVMVNET/subnets/default"
     },
     "resources": [
         {
