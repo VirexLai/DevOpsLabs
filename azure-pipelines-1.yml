@@ -10,12 +10,10 @@ pool:
  # vmImage: ubuntu-latest
  name: Default
 
-name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
-
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-  powershell: ./Azure-script.ps1
+- powershell: ./Azure-script.ps1
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
