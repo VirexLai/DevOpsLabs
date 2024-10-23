@@ -1,0 +1,66 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "projectName": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 11,
+            "metadata": {
+                "description": "Specify a project name that is used to generate resource names."
+            }
+        },
+        "networkInterfaces_TestNIC_name": {
+            "defaultValue": "[concat(parameters('projectName'), 'NIC')]",
+            "type": "String"
+        },
+        "publicIPAddresses_TestPIP_externalid": {
+            "defaultValue": "/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/DevOpsTest_NewRG/providers/Microsoft.Network/publicIPAddresses/devopsarmPublicIP",
+            "type": "String"
+        },
+        "virtualNetworks_TestVNet_externalid": {
+            "defaultValue": "/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/DevOpsTest_NewRG/providers/Microsoft.Network/virtualNetworks/devopsarmVMVNET",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "2024-01-01",
+            "name": "[parameters('networkInterfaces_TestNIC_name')]",
+            "location": "japaneast",
+            "kind": "Regular",
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "id": "[concat(resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_TestNIC_name')), '/ipConfigurations/ipconfig1')]",
+                        "type": "Microsoft.Network/networkInterfaces/ipConfigurations",
+                        "properties": {
+                            "privateIPAddress": "11.0.0.4",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[parameters('publicIPAddresses_TestPIP_externalid')]"
+                            },
+                            "subnet": {
+                                "id": "[concat(parameters('virtualNetworks_TestVNet_externalid'), '/subnets/default')]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": []
+                },
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "disableTcpStateTracking": false,
+                "nicType": "Standard",
+                "auxiliaryMode": "None",
+                "auxiliarySku": "None"
+            }
+        }
+    ]
+}
