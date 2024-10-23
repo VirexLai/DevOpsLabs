@@ -31,7 +31,7 @@
             "type": "String"
         },
         "storageAccounts_TestSA_name": {
-            "defaultValue": "[concat(parameters('projectName'), 'estsa')]",
+            "defaultValue": "[concat(parameters('projectName'), 'testsa')]",
             "type": "String"
         }
     },
@@ -242,18 +242,21 @@
                     "vmSize": "Standard_D2s_v3"
                 },
                 "storageProfile": {
-                    "osDisk": {
-                        "createOption": "FromImage",
-                        "managedDisk": {
-                            "storageAccountType": "Premium_LRS"
-                        },
-                        "deleteOption": "Detach"
-                    },
                     "imageReference": {
                         "publisher": "microsoftwindowsdesktop",
                         "offer": "windows-11",
                         "sku": "win11-22h2-entn",
                         "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[concat(parameters('virtualMachines_TestVM_name'), '_disk1_714392850a4d43adb140414e8dbee4ce')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachines_TestVM_name'), '_disk1_714392850a4d43adb140414e8dbee4ce'))]"
+                        },
+                        "deleteOption": "Detach"
                     },
                     "dataDisks": [],
                     "diskControllerType": "SCSI"
