@@ -24,7 +24,7 @@
         },
         "privateIPAllocationMethod": {
             "type": "string",
-            "vaule": "Dynamic"
+            "defaultVaule": "Dynamic"
         }
     },
     "resources": [
