@@ -31,7 +31,7 @@
             "type": "String"
         },
         "storageAccounts_TestSA_name": {
-            "defaultValue": "[concat(parameters('projectName'), 'TestSA')]",
+            "defaultValue": "[concat(parameters('projectName'), 'testsa')]",
             "type": "String"
         }
     },
