@@ -31,7 +31,7 @@
             "type": "String"
         },
         "storageAccounts_TestSA_name": {
-            "defaultValue": "[concat(parameters('projectName'), 'testsa')]",
+            "defaultValue": "[concat(parameters('projectName'), 'estsa')]",
             "type": "String"
         }
     },
@@ -250,11 +250,11 @@
                     },
                     "osDisk": {
                         "osType": "Windows",
-                        "name": "[concat(parameters('virtualMachines_TestVM_name'), '_disk1_714392850a4d43adb140414e8dbee4ce')]",
+                        "name": "[concat(parameters('virtualMachines_TestVM_name'), 'test_disk1')]",
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
-                            "id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachines_TestVM_name'), '_disk1_714392850a4d43adb140414e8dbee4ce'))]"
+                            "id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachines_TestVM_name'), 'test_disk1'))]"
                         },
                         "deleteOption": "Detach"
                     },
