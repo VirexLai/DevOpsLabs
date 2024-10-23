@@ -8,7 +8,7 @@ $VSubNetName = "TestVSubNet"
 $VSubNetRange = "11.0.0.0/24"
 
 ## 新增資源群組 ##
-New-AzResourceGroup -Name $RGName -Location $location
+New-AzResourceGroup -Name "TestRG" -Location "Japan East"
 
 ## 新增虛擬網路 ##
 New-AzVirtualNetwork -ResourceGroupName $RGName -Name $VNetName -Location $location -AddressPrefix $VNetRagne
