@@ -252,14 +252,6 @@
                 "osProfile": {
                     "computerName": "TestPC",
                     "adminUsername": "Virex",
-                    "windowsConfiguration": {
-                        "provisionVMAgent": true,
-                        "enableAutomaticUpdates": true,
-                        "patchSettings": {
-                            "patchMode": "AutomaticByOS",
-                            "assessmentMode": "ImageDefault"
-                        }
-                    },
                     "secrets": [],
                     "allowExtensionOperations": true,
                     "requireGuestProvisionSignal": true
