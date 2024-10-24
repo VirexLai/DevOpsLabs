@@ -251,7 +251,7 @@
                 },
                 "osProfile": {
                     "computerName": "TestPC",
-                    "adminUsername": "Virex",
+                    "adminUsername": "Virex"
                 },
                 "networkProfile": {
                     "networkInterfaces": [
