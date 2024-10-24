@@ -252,9 +252,6 @@
                 "osProfile": {
                     "computerName": "TestPC",
                     "adminUsername": "Virex",
-                    "secrets": [],
-                    "allowExtensionOperations": true,
-                    "requireGuestProvisionSignal": true
                 },
                 "networkProfile": {
                     "networkInterfaces": [
