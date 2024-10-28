@@ -2,17 +2,25 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "projectName": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 11,
+            "metadata": {
+                "description": "Specify a project name that is used to generate resource names."
+            }
+        },
         "location": {
             "type": "string",
-            "defaultValue": "japaneast"
+            "defaultValue": "[resourceGroup().location]"
         },
         "virtualNetworks_TestVM_vnet_name": {
-            "defaultValue": "TestVM-vnet",
+            "defaultValue": "[concat(parameters('projectName'), 'vnet')]",
             "type": "String"
         },
         "networkInterfaceName": {
             "type": "string",
-            "defaultValue": "testvm262"
+            "defaultValue": "[concat(parameters('projectName'), 'ni)]"
         },
         "enableAcceleratedNetworking": {
             "type": "bool",
@@ -20,7 +28,7 @@
         },
         "networkSecurityGroupName": {
             "type": "string",
-            "defaultValue": "TestVMnsg562"
+            "defaultValue": "[concat(parameters('projectName'), 'nsg)]"
         },
         "networkSecurityGroupRules": {
             "type": "array",
@@ -42,15 +50,15 @@
         },
         "subnetName": {
             "type": "string",
-            "defaultValue": "default"
+            "defaultValue": "[concat(parameters('projectName'), 'vmsubnet')]"
         },
         "virtualNetworkId": {
             "type": "string",
-            "defaultValue": "/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVM-vnet"
+            "defaultValue": "/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/[concat(parameters('projectName'), 'vnet')]"
         },
         "publicIpAddressName": {
             "type": "string",
-            "defaultValue": "TestVMip734"
+            "defaultValue": "[concat(parameters('projectName'), 'pip')]"
         },
         "publicIpAddressType": {
             "type": "string",
@@ -66,15 +74,15 @@
         },
         "virtualMachineName": {
             "type": "string",
-            "defaultValue": "TestVM"
+            "defaultValue": "[concat(parameters('projectName'), 'vm')]"
         },
         "virtualMachineComputerName": {
             "type": "string",
-            "defaultValue": "TestVM"
+            "defaultValue": "[concat(parameters('projectName'), 'vmname')]"
         },
         "virtualMachineRG": {
             "type": "string",
-            "defaultValue": "TestRG"
+            "defaultValue": "resourceGroup().name"
         },
         "osDiskType": {
             "type": "string",
@@ -156,7 +164,7 @@
             "type": "Microsoft.Network/virtualNetworks",
             "apiVersion": "2024-01-01",
             "name": "[parameters('virtualNetworks_TestVM_vnet_name')]",
-            "location": "japaneast",
+            "location": "[resourceGroup().location]",
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
@@ -169,8 +177,8 @@
                 },
                 "subnets": [
                     {
-                        "name": "default",
-                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_TestVM_vnet_name'), 'default')]",
+                        "name": "[concat(parameters('projectName'), 'vmsubnet')]",
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_TestVM_vnet_name'), '[concat(parameters('projectName'), 'vmsubnet')]')]",
                         "properties": {
                             "addressPrefixes": [
                                 "10.0.0.0/24"
@@ -189,7 +197,7 @@
         {
             "type": "Microsoft.Network/virtualNetworks/subnets",
             "apiVersion": "2024-01-01",
-            "name": "[concat(parameters('virtualNetworks_TestVM_vnet_name'), '/default')]",
+            "name": "[concat(parameters('virtualNetworks_TestVM_vnet_name'), '/[concat(parameters('projectName'), 'vmsubnet')]')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_TestVM_vnet_name'))]"
             ],
