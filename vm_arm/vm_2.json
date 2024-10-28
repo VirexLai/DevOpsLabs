@@ -50,7 +50,7 @@
         },
         "virtualNetworkId": {
             "type": "string",
-            "defaultValue": "/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/testRG/providers/Microsoft.Network/virtualNetworks/TestVM-vnet"
+            "defaultValue": ""
          },
         "publicIpAddressName": {
             "type": "string",
