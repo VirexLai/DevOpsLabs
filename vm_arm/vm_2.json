@@ -16,7 +16,7 @@
         },
         "enableAcceleratedNetworking": {
             "type": "bool",
-            "defaultValue": "true"
+            "defaultValue": true
         },
         "networkSecurityGroupName": {
             "type": "string",
