@@ -150,7 +150,7 @@
         }
     },
     "variables": {
-        "virtualNetworkId2": "'/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/',[concat(parameters('resourceGroup_Name'),'/providers/Microsoft.Network/virtualNetworks/TestVM-vnet']"
+        "virtualNetworkId2": "'/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/',[concat(parameters('resourceGroup_Name')],'/providers/Microsoft.Network/virtualNetworks/TestVM-vnet'"
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroupName'))]",
         "vnetId": "[variables('virtualNetworkId2')]",
         "vnetName": "[last(split(variables('vnetId'), '/'))]",
