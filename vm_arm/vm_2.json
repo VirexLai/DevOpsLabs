@@ -4,11 +4,11 @@
     "parameters": {
         "location": {
             "type": "string",
-            "defaultValue": "[resourceGroup().location]"
+            "defaultValue": "japaneast"
         },
         "virtualNetworks_TestVM_vnet_name": {
-            "type": "String",
-            "defaultValue": "TestVM-vnet"
+            "defaultValue": "TestVM-vnet",
+            "type": "String"
         },
         "networkInterfaceName": {
             "type": "string",
@@ -16,7 +16,7 @@
         },
         "enableAcceleratedNetworking": {
             "type": "bool",
-            "defaultValue": true
+            "defaultValue": "true"
         },
         "networkSecurityGroupName": {
             "type": "string",
@@ -42,12 +42,12 @@
         },
         "subnetName": {
             "type": "string",
-            "defaultValue": "default"
+            "defaultValue": "vmsubnet"
         },
         "virtualNetworkId": {
             "type": "string",
             "defaultValue": "'/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/', resourceGroup().name , '/providers/Microsoft.Network/virtualNetworks/TestVM-vnet'"
-        },
+         },
         "publicIpAddressName": {
             "type": "string",
             "defaultValue": "TestVMip734"
@@ -74,7 +74,7 @@
         },
         "virtualMachineRG": {
             "type": "string",
-            "defaultValue": "resourceGroup().name"
+            "defaultValue": "TestRG"
         },
         "osDiskType": {
             "type": "string",
@@ -94,7 +94,7 @@
         },
         "hibernationEnabled": {
             "type": "bool",
-            "defaultValue": false
+            "defaultValue": "false"
         },
         "adminUsername": {
             "type": "string",
@@ -110,7 +110,7 @@
         },
         "enableHotpatching": {
             "type": "bool",
-            "defaultValue": false
+            "defaultValue": "false"
         },
         "securityType": {
             "type": "string",
@@ -118,11 +118,11 @@
         },
         "secureBoot": {
             "type": "bool",
-            "defaultValue": true
+            "defaultValue": "true"
         },
         "vTPM": {
             "type": "bool",
-            "defaultValue": true
+            "defaultValue": "true"
         },
         "autoShutdownStatus": {
             "type": "string",
@@ -156,7 +156,7 @@
             "type": "Microsoft.Network/virtualNetworks",
             "apiVersion": "2024-01-01",
             "name": "[parameters('virtualNetworks_TestVM_vnet_name')]",
-            "location": "[resourceGroup().location]",
+            "location": "japaneast",
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
@@ -169,8 +169,8 @@
                 },
                 "subnets": [
                     {
-                        "name": "default",
-                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_TestVM_vnet_name'), 'default')]",
+                        "name": "vmsubnet",
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_TestVM_vnet_name'), 'vmsubnet')]",
                         "properties": {
                             "addressPrefixes": [
                                 "10.0.0.0/24"
@@ -189,7 +189,7 @@
         {
             "type": "Microsoft.Network/virtualNetworks/subnets",
             "apiVersion": "2024-01-01",
-            "name": "[concat(parameters('virtualNetworks_TestVM_vnet_name'), '/default')]",
+            "name": "[concat(parameters('virtualNetworks_TestVM_vnet_name'), '/vmsubnet')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_TestVM_vnet_name'))]"
             ],
