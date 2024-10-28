@@ -20,6 +20,6 @@ steps:
     location: 'Japan East'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/VirexLai/DevOpsLabs/refs/heads/main/vm_arm/vm_2.json'
-    overrideParameters: '-projectName devopsarm'
+#    overrideParameters: '-projectName devopsarm'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
