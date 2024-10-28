@@ -8,7 +8,7 @@
         },
         "resourceGroup_Name":{
             "type": "string",
-            "defaultValue" "[resourceGroup().name]"
+            "defaultValue": "[resourceGroup().name]"
         },
         "virtualNetworks_TestVM_vnet_name": {
             "type": "string",
