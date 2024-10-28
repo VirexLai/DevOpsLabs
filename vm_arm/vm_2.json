@@ -4,11 +4,11 @@
     "parameters": {
         "location": {
             "type": "string",
-            "defaultValue": "japaneast"
+            "defaultValue": "[resourceGroup().location]"
         },
         "virtualNetworks_TestVM_vnet_name": {
-            "defaultValue": "TestVM-vnet",
-            "type": "String"
+            "type": "String",
+            "defaultValue": "TestVM-vnet"
         },
         "networkInterfaceName": {
             "type": "string",
@@ -156,7 +156,7 @@
             "type": "Microsoft.Network/virtualNetworks",
             "apiVersion": "2024-01-01",
             "name": "[parameters('virtualNetworks_TestVM_vnet_name')]",
-            "location": "japaneast",
+            "location": "[resourceGroup().location]",
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
