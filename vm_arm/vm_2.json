@@ -15,12 +15,12 @@
             "defaultValue": "[resourceGroup().location]"
         },
         "virtualNetworks_TestVM_vnet_name": {
-            "defaultValue": "[concat(parameters('projectName'), 'vnet')]",
+            "defaultValue": "TestVM-vnet",
             "type": "String"
         },
         "networkInterfaceName": {
             "type": "string",
-            "defaultValue": "[concat(parameters('projectName'), 'ni')]"
+            "defaultValue": "testvm262"
         },
         "enableAcceleratedNetworking": {
             "type": "bool",
@@ -28,7 +28,7 @@
         },
         "networkSecurityGroupName": {
             "type": "string",
-            "defaultValue": "[concat(parameters('projectName'), 'nsg)]"
+            "defaultValue": "TestVMnsg562"
         },
         "networkSecurityGroupRules": {
             "type": "array",
@@ -50,15 +50,15 @@
         },
         "subnetName": {
             "type": "string",
-            "defaultValue": "[concat(parameters('projectName'), 'vmsubnet')]"
+            "defaultValue": "default"
         },
         "virtualNetworkId": {
             "type": "string",
-            "defaultValue": "/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/[concat(parameters('projectName'), 'vnet')]"
+            "defaultValue": "[resourceId(resourceGroup().name, 'Microsoft.Network/virtualNetworks', parameters('virtualNetworks_TestVM_vnet_name'))]"
         },
         "publicIpAddressName": {
             "type": "string",
-            "defaultValue": "[concat(parameters('projectName'), 'pip')]"
+            "defaultValue": "TestVMip734"
         },
         "publicIpAddressType": {
             "type": "string",
@@ -74,15 +74,15 @@
         },
         "virtualMachineName": {
             "type": "string",
-            "defaultValue": "[concat(parameters('projectName'), 'vm')]"
+            "defaultValue": "TestVM"
         },
         "virtualMachineComputerName": {
             "type": "string",
-            "defaultValue": "[concat(parameters('projectName'), 'vmname')]"
+            "defaultValue": "TestVM"
         },
         "virtualMachineRG": {
             "type": "string",
-            "defaultValue": "resourceGroup().name"
+            "defaultValue": "TestRG"
         },
         "osDiskType": {
             "type": "string",
@@ -177,8 +177,8 @@
                 },
                 "subnets": [
                     {
-                        "name": "[concat(parameters('projectName'), 'vmsubnet')]",
-                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_TestVM_vnet_name'), '[concat(parameters('projectName'), 'vmsubnet')]')]",
+                        "name": "default",
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_TestVM_vnet_name'), 'default')]",
                         "properties": {
                             "addressPrefixes": [
                                 "10.0.0.0/24"
@@ -197,7 +197,7 @@
         {
             "type": "Microsoft.Network/virtualNetworks/subnets",
             "apiVersion": "2024-01-01",
-            "name": "[concat(parameters('virtualNetworks_TestVM_vnet_name'), '/[concat(parameters('projectName'), 'vmsubnet')]')]",
+            "name": "[concat(parameters('virtualNetworks_TestVM_vnet_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_TestVM_vnet_name'))]"
             ],
