@@ -74,7 +74,7 @@
         },
         "virtualMachineRG": {
             "type": "string",
-            "defaultValue": "TestRG"
+            "defaultValue": "resourceGroup().name"
         },
         "osDiskType": {
             "type": "string",
