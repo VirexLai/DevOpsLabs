@@ -16,7 +16,7 @@ steps:
     azureResourceManagerConnection: 'ArmDevOpsConnect'
     subscriptionId: 'daec4827-7402-4d03-a7c9-b48171487bee'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'TestRG2'
+    resourceGroupName: 'TestRG9487'
     location: 'Japan East'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/VirexLai/DevOpsLabs/refs/heads/main/vm_arm/vm_2.json'
