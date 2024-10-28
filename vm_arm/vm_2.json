@@ -48,10 +48,6 @@
             "type": "string",
             "defaultValue": "vmsubnet"
         },
-        "virtualNetworkId": {
-            "type": "string",
-            "defaultValue": ""
-         },
         "publicIpAddressName": {
             "type": "string",
             "defaultValue": "TestVMip734"
