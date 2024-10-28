@@ -12,7 +12,7 @@
         },
         "virtualNetworkId":{
             "type": "string",
-            "defaultValue": "[]"
+            "defaultValue": ""
         },
         "virtualNetworks_TestVM_vnet_name": {
             "type": "string",
