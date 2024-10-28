@@ -44,10 +44,6 @@
             "type": "string",
             "defaultValue": "default"
         },
-#        "virtualNetworkId": {
-#            "type": "string",
-#            "defaultValue": "['/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/',resourceGroup().name,'/providers/Microsoft.Network/virtualNetworks/TestVM-vnet'"
-#        },
         "publicIpAddressName": {
             "type": "string",
             "defaultValue": "TestVMip734"
@@ -147,7 +143,6 @@
     },
     "variables": {
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroupName'))]",
-#        "vnetId": "[parameters('virtualNetworkId')]",
         "vnetId": "['/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/',resourceGroup().name,'/providers/Microsoft.Network/virtualNetworks/TestVM-vnet']",
         "vnetName": "[last(split(variables('vnetId'), '/'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]"
