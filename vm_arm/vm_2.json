@@ -16,7 +16,7 @@
         },
         "enableAcceleratedNetworking": {
             "type": "bool",
-            "defaultValue": "true"
+            "defaultValue": true
         },
         "networkSecurityGroupName": {
             "type": "string",
@@ -94,7 +94,7 @@
         },
         "hibernationEnabled": {
             "type": "bool",
-            "defaultValue": "false"
+            "defaultValue": false
         },
         "adminUsername": {
             "type": "string",
@@ -110,7 +110,7 @@
         },
         "enableHotpatching": {
             "type": "bool",
-            "defaultValue": "false"
+            "defaultValue": false
         },
         "securityType": {
             "type": "string",
@@ -118,11 +118,11 @@
         },
         "secureBoot": {
             "type": "bool",
-            "defaultValue": "true"
+            "defaultValue": true
         },
         "vTPM": {
             "type": "bool",
-            "defaultValue": "true"
+            "defaultValue": true
         },
         "autoShutdownStatus": {
             "type": "string",
