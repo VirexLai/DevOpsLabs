@@ -2,17 +2,9 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "projectName": {
-            "type": "string",
-            "minLength": 3,
-            "maxLength": 11,
-            "metadata": {
-                "description": "Specify a project name that is used to generate resource names."
-            }
-        },
         "location": {
             "type": "string",
-            "defaultValue": "[resourceGroup().location]"
+            "defaultValue": "japaneast"
         },
         "virtualNetworks_TestVM_vnet_name": {
             "defaultValue": "TestVM-vnet",
@@ -164,7 +156,7 @@
             "type": "Microsoft.Network/virtualNetworks",
             "apiVersion": "2024-01-01",
             "name": "[parameters('virtualNetworks_TestVM_vnet_name')]",
-            "location": "[resourceGroup().location]",
+            "location": "japaneast",
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
