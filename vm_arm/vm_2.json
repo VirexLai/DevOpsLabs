@@ -20,7 +20,7 @@
         },
         "networkInterfaceName": {
             "type": "string",
-            "defaultValue": "[concat(parameters('projectName'), 'ni)]"
+            "defaultValue": "[concat(parameters('projectName'), 'ni')]"
         },
         "enableAcceleratedNetworking": {
             "type": "bool",
