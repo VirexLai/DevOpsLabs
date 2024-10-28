@@ -237,7 +237,7 @@
                         }
                     }
                 ],
-                "enableAcceleratedNetworking": "[parameters('enableAcceleratedNetworking')]",
+                "enableAcceleratedNetworking": true,
                 "networkSecurityGroup": {
                     "id": "[variables('nsgId')]"
                 }
