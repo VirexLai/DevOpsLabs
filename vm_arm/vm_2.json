@@ -2,6 +2,14 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "projectName": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 11,
+            "metadata": {
+                "description": "Specify a project name that is used to generate resource names."
+            }
+        },
         "location": {
             "type": "string",
             "defaultValue": "[resourceGroup().location]"
@@ -12,7 +20,7 @@
         },
         "virtualNetworkId":{
             "type": "string",
-            "defaultValue": ""
+            "defaultValue": "[concat('/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/',parameters('resourceGroup_Name'),'/providers/Microsoft.Network/virtualNetworks/TestVM-vnet')]"
         },
         "virtualNetworks_TestVM_vnet_name": {
             "type": "string",
@@ -151,7 +159,7 @@
     },
     "variables": {
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroupName'))]",
-        "vnetId": "[concat('/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/',parameters('resourceGroup_Name'),'/providers/Microsoft.Network/virtualNetworks/TestVM-vnet')]",
+        "vnetId": "parameter('virtualNetworkId')",
         "vnetName": "[last(split(variables('vnetId'), '/'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]"
     },
