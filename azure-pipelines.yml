@@ -9,6 +9,9 @@ trigger:
 pool:
 #  vmImage: ubuntu-latest
   name: LinuxAgents
+  variables:
+    -name : RGName
+    value: 'TestRG9487'
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
@@ -23,9 +26,11 @@ steps:
 #    overrideParameters: '-projectName devopsarm'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
-- script: Assign VM role!
-  displayName: 'Run a one-line script'
+- task2: Powershell
+    displayName: 'Run a one-line script'
+    inputs:
+      targetType: 'inline'
+      script:
+        write-host $(RGName)
 - pwsh: ./test2.ps1
-- script: |
-    echo Done!
-  displayName: 'Done for assign'
+    displayName: 'Done for assign'
