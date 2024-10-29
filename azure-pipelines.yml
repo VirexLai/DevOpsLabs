@@ -27,8 +27,7 @@ steps:
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
     
-- task: Powershell@3
-  displayName: "Starting Assign"
+- task: Powershell@
   inputs:
     targetType: "inline"
     script: write-host $(RGName)
