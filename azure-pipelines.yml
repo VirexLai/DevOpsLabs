@@ -9,9 +9,12 @@ trigger:
 pool:
 #  vmImage: ubuntu-latest
   name: LinuxAgents
-  variables:
-    -name: RGName
-    value: 'TestRG9487'
+
+
+variables:
+  -name: RGName
+  value: 'TestRG9487'
+
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
@@ -19,17 +22,17 @@ steps:
     azureResourceManagerConnection: 'ArmDevOpsConnect'
     subscriptionId: 'daec4827-7402-4d03-a7c9-b48171487bee'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'TestRG9487'
+    resourceGroupName: '$(RGName)'
     location: 'Japan East'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/VirexLai/DevOpsLabs/refs/heads/main/vm_arm/vm_2.json'
 #    overrideParameters: '-projectName devopsarm'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
-    
-- task: powershell@1
+- task: PowerShell@2
   inputs:
+    filePath: 'https://raw.githubusercontent.com/VirexLai/DevOpsLabs/refs/heads/main/test2.ps1'
     targetType: "inline"
-    script: write-host $(RGName)
+    script: write-host ${env:RGNAME}
     pwsh: ./test2.ps1
     displayName: "Done for assign"
