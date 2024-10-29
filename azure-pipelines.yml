@@ -23,3 +23,10 @@ steps:
 #    overrideParameters: '-projectName devopsarm'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
+- task2: giveUpower
+- script: Assign VM role!
+  displayName: 'Run a one-line script'
+- pwsh: ./test2.ps1
+- script: |
+    echo Done!
+  displayName: 'Done for assign'
