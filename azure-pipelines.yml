@@ -26,7 +26,7 @@ steps:
 #    overrideParameters: '-projectName devopsarm'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
-- task2: Powershell
+- task2: Powershell@4
     displayName: 'Run a one-line script'
     inputs:
       targetType: 'inline'
