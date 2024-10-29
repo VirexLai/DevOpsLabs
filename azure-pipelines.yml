@@ -27,7 +27,7 @@ steps:
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
     
-- task: AzureResourceManagerTemplateDeployment@3
+- task: powershell@1
   inputs:
     targetType: "inline"
     script: write-host $(RGName)
