@@ -30,9 +30,7 @@ steps:
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
 - task: PowerShell@2
+  displayName: "Starting assign VM role to User"
   inputs:
-    filePath: 'https://raw.githubusercontent.com/VirexLai/DevOpsLabs/refs/heads/main/test2.ps1'
-    targetType: "inline"
-    script: write-host ${env:RGNAME}
     pwsh: ./test2.ps1
     displayName: "Done for assign"
