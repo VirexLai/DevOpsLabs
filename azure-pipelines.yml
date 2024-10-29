@@ -27,7 +27,7 @@ steps:
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
     
-- task: Powershell@4
+- task: Powershell@3
   displayName: "Starting Assign"
   inputs:
     targetType: "inline"
