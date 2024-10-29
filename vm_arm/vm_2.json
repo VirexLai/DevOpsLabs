@@ -153,7 +153,7 @@
         "vnetIdf": "/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/",
         "vnetIdr": "/providers/Microsoft.Network/virtualNetworks/TestVM-vnet",
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroupName'))]",
-        "vnetId": "[concat(variables('vnetIdf')), concat(parameters('resourceGroup_Name')),concat(variables('vnetidr'))]",
+        "vnetId": "[concat(variables('vnetIdf'),parameters('resourceGroup_Name'),variables('vnetidr'))]",
         "vnetName": "[last(split(variables('vnetId'), '/'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]"
     },
