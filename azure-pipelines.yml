@@ -27,7 +27,7 @@ steps:
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
     
-- task2: Powershell@4
+- task: Powershell@4
   inputs:
   targetType: 'inline'
   script: write-host $(RGName)
