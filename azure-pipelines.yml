@@ -28,8 +28,9 @@ steps:
     deploymentName: 'DeployPipelineTemplate'
     
 - task: Powershell@4
+  displayName: "Starting Assign"
   inputs:
-  targetType: 'inline'
-  script: write-host $(RGName)
-  pwsh: ./test2.ps1
-  displayName: 'Done for assign'
+    targetType: "inline"
+    script: write-host $(RGName)
+    pwsh: ./test2.ps1
+    displayName: "Done for assign"
