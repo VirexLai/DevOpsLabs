@@ -1,4 +1,7 @@
 ## 從 YAML 內建立的 ResourceGroup 找出 VM 並儲存資訊 ## 
+$vm = "TEST ECHO"
+echo $vm
+
 $vm = Get-AzVM -ResourceGroupName ${env:RGNAME} 
 
 echo "vm info here"
