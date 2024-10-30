@@ -16,7 +16,7 @@ else
 {
     for ( $i=0 ; $i -lt $vmnum ; $i++ )
     {
-        New-AzRoleAssignment -SignInName $AssignAccount -RoleDefinitionName "Contributor" -Scope $vm.id[$i]] 
+        New-AzRoleAssignment -SignInName $AssignAccount -RoleDefinitionName "Contributor" -Scope $vm.id[$i] 
     }
 }
 
