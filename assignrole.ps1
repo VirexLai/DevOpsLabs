@@ -12,3 +12,5 @@ for($i = 0; $i -le $vmnum ; $i++)
 {
     New-AzRoleAssignment -SignInName $AssignAccount -RoleDefinitionName "Contributor" -Scope $vm.id[$i] 
 }
+
+echo "DONE"
