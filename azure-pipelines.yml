@@ -13,6 +13,7 @@ pool:
 
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
+  displayName: "Create Azure Environment"
   inputs:
     deploymentScope: 'Resource Group'
     azureResourceManagerConnection: 'ArmDevOpsConnect'
@@ -29,5 +30,5 @@ steps:
 - task: PowerShell@2
   displayName: "Starting assign VM role to User"
   inputs:
-    filePath: './AssignRole.ps1'
+    filePath: './assignrole.ps1'
     displayName: "Done for assign"
