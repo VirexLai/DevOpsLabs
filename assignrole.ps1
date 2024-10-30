@@ -8,9 +8,16 @@ $AssignAccount = "Guest1@virex.online"
 $vmnum = $vm.id.count
 
 ## 指派 Role ##
-for($i = 0; $i -le $vmnum ; $i++)
+if ( 1 -eq $vmmum ) 
 {
-    New-AzRoleAssignment -SignInName $AssignAccount -RoleDefinitionName "Contributor" -Scope $vm.id[$i] 
+    New-AzRoleAssignment -SignInName $AssignAccount -RoleDefinitionName "Contributor" -Scope $vm.id
+}
+else
+{
+    for ( $i=0 ; $i -lt $vmnum ; $i++ )
+    {
+        New-AzRoleAssignment -SignInName $AssignAccount -RoleDefinitionName "Contributor" -Scope $vm.id[$i]] 
+    }
 }
 
 echo "DONE"
