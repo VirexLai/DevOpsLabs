@@ -1,4 +1,4 @@
-$vm = Get-AzVM -ResourceGroupName $RGName -Name $VMName
+$vm = Get-AzVM -ResourceGroupName  ${env:RGNAME} 
 echo $vm
 
 ## 指派 Role 給特定帳號 ##
