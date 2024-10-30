@@ -1,3 +1,4 @@
+## 從 YAML 內建立的 ResourceGroup 找出 VM 並儲存資訊 ## 
 $vm = Get-AzVM -ResourceGroupName  ${env:RGNAME} 
 
 ## 指派 Role 給特定帳號 ##
@@ -9,5 +10,5 @@ $vmnum = $vm.id.count
 ## 指派 Role ##
 for($i = 0; $i -le $vmnum ; $i++)
 {
-    New-AzRoleAssignment -SignInName $AssignAccount -RoleDefinitionName "Contributor" -Scope $vm.id[$i]
+    New-AzRoleAssignment -SignInName $AssignAccount -RoleDefinitionName "Contributor" -Scope $vm.id[$i] 
 }
