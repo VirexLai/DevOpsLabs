@@ -8,7 +8,7 @@ $AssignAccount = "Guest1@virex.online"
 $vmnum = $vm.id.count
 
 ## 指派 Role ##
-if ( 1 -eq $vmmum ) 
+if ( 1 -eq $vmnum ) 
 {
     New-AzRoleAssignment -SignInName $AssignAccount -RoleDefinitionName "Contributor" -Scope $vm.id
 }
