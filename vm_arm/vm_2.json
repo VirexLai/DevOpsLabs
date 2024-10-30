@@ -6,10 +6,6 @@
             "type": "string",
             "defaultValue": "[resourceGroup().location]"
         },
-        "resourceGroup_Name":{
-            "type": "string",
-            "defaultValue": "[resourceGroup().name]"
-        },
         "virtualNetworkId":{
             "type": "string",
             "defaultValue": "[concat('/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/',parameters('resourceGroup_Name'),'/providers/Microsoft.Network/virtualNetworks/TestVM-vnet')]"
@@ -151,10 +147,9 @@
     },
     "variables": {
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroupName'))]",
-        "vnetId": "[concat('/subscriptions/daec4827-7402-4d03-a7c9-b48171487bee/resourceGroups/',parameters('resourceGroup_Name'),'/providers/Microsoft.Network/virtualNetworks/TestVM-vnet')]",
-        "vnetId2": "[parameters('virtualNetworkId')]",
-        "vnetName": "[last(split(variables('vnetId2'), '/'))]",
-        "subnetRef": "[concat(variables('vnetId2'), '/subnets/', parameters('subnetName'))]"
+        "vnetId": "[parameters('virtualNetworkId')]",
+        "vnetName": "[last(split(variables('vnetId'), '/'))]",
+        "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]"
     },
     "resources": [
         {
